@@ -2,5 +2,6 @@
 ^\.settings$
 ^\.project$
 ^build-pkg$
+^data-raw$
 ^README\.Rmd$
 ^README\.md$

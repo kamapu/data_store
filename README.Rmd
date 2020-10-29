@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# data_store
+# datastore
 A repository for diverse data.
 
 # How to install it
@@ -23,7 +23,7 @@ For its installation you require previously and installation of the package
 `remotes`.
 
 ```{r,eval=FALSE}
-remotes::install_github("kamapu/data_store")
+remotes::install_github("kamapu/datastore")
 ```
 
 Enjoy it!

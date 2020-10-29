@@ -4,13 +4,14 @@
 ################################################################################
 
 # required_packages
-gisrepos::require_now(c("devtools"), update=TRUE, dependencies=TRUE)
+Pkgs <- c("devtools", "rmarkdown")
+gisrepos::require_now(Pkgs, update=TRUE, dependencies=TRUE)
 
 # document package
 document()
 
-## # write data set
-## source("data-raw/01_write_data_sets.R")
+# Render readme-file.
+render("README.Rmd")
 
 # Build package
 pkg_loc <- build(path="build-pkg")
@@ -70,8 +71,7 @@ check_built(path=pkg_loc)
 ## # Install the package
 ## ## install()
 ## 
-## # Render readme-file.
-## render("README.Rmd")
+
 ## 
 ## # Check on Win-builder
 ## browseURL("https://win-builder.r-project.org/")
