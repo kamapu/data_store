@@ -1,0 +1,6 @@
+^\.git$
+^\.settings$
+^\.project$
+^build-pkg$
+^README\.Rmd$
+^README\.md$

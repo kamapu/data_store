@@ -1,0 +1,29 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- Use snippet 'render_markdown' for it -->
+
+```{r,echo=FALSE}
+knitr::opts_chunk$set(
+  collapse=TRUE,
+  comment="#>",
+  fig.path="man/figures/"
+)
+```
+
+# data_store
+A repository for diverse data.
+
+# How to install it
+For its installation you require previously and installation of the package
+`remotes`.
+
+```{r,eval=FALSE}
+remotes::install_github("kamapu/data_store")
+```
+
+Enjoy it!
