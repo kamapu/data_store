@@ -1,16 +1,18 @@
-#' @name wetlands_syntax
+#' @name grasslands
 #' 
 #' @docType data
 #' 
-#' @title Syntaxonomic List of East African Semi-Aquatic Vegetation
+#' @title Grasslands from Temuco, Chile
 #' 
-#' @format A list of three data frames.
+#' @format A [vegtable-class] object.
 #' 
 #' @details 
 #' Describe.
 #' 
 #' @references 
-#' \bold{Alvarez M et al. (2012).} SWEA-Dataveg -- Vegetation of small wetlands
-#' in East Africa. \emph{Biodiversity and Ecology} 4: 294--295.
+#' \bold{San Martín C et al. (1998).} 
+#' La vegetación de lagunas primaverales en las cercanías de Temuco
+#' (Cautín, Chile).
+#' \emph{Acta Botanica Malacitana} 23: 99--120.
 #' 
-"wetland_syntax"
+"grasslands"

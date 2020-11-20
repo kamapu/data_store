@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>data_store</name>
-	<comment></comment>
+	<comment>
+	An R package including diversity data sets and other used as examples for
+	teaching and trainings on R an other applications.
+	</comment>
 	<projects>
 	</projects>
 	<buildSpec>
