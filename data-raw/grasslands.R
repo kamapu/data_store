@@ -5,12 +5,13 @@
 
 library(vegtableDB)
 library(biblioDB)
+library(sfheaders)
 
 conn <- connect_db(dbname = "vegetation_v3", user = "miguel")
 
 grasslands <- db2vegtable(conn, database = "sudamerica")
 
-dbDisconnect(conn)
+DBI::dbDisconnect(conn)
 
 # Subset database
 grasslands <- subset(grasslands, bibtexkey  ==  "SanMartin1998",
@@ -33,6 +34,20 @@ grasslands@header <- grasslands@header[!colnames(grasslands@header) %in%
 # Re arrange slot samples
 grasslands@samples <- grasslands@samples[,c("record_id", "ReleveID",
 				"TaxonUsageID", "cover_percentage")]
+
+# Get coordinates
+coordinates <- sf_to_df(grasslands@relations$plot_centroid, fill = TRUE)
+grasslands$longitude <- with(coordinates, x[match(grasslands$plot_centroid,
+            plot_centroid)])
+grasslands$latitude <- with(coordinates, y[match(grasslands$plot_centroid,
+            plot_centroid)])
+
+# Delete unnecessary headers
+grasslands@header <- grasslands@header[ , !names(grasslands@header) %in%
+        c("plot_centroid", "syntax_bbl_alvarez2022", "syntax_ecoveg_alvarez2022")]
+grasslands <- clean(grasslands)
+grasslands@syntax <- list()
+grasslands
 
 save(grasslands, file = "data/grasslands.rda")
 ## load("data/grasslands.rda")
